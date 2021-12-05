@@ -1,16 +1,16 @@
 package april.tag;
 
-/** Tag family with 16 distinct codes.
+/** Tag family with 18 distinct codes.
     bits: 24,  minimum hamming: 10
 
     Max bits corrected       False positive rate
-            0                  0.00009537 %
-            1                  0.00238419 %
-            2                  0.02870560 %
-            3                  0.22172928 %
-            4                  1.23510361 %
+            0                  0.00010729 %
+            1                  0.00268221 %
+            2                  0.03229380 %
+            3                  0.24944544 %
+            4                  1.38949156 %
 
-    Generation time: 10.685000 s
+    Generation time: 22.742000 s
 
     Hamming distance between pairs of codes (accounting for rotation):
 
@@ -24,11 +24,11 @@ package april.tag;
        7  0
        8  0
        9  0
-      10  82
-      11  28
-      12  10
+      10  128
+      11  0
+      12  23
       13  0
-      14  0
+      14  2
       15  0
       16  0
       17  0
@@ -44,19 +44,19 @@ public class TagCustom24h10 extends TagFamily
 {
 	private static class ConstructCodes0 {
 		private static long[] constructCodes() {
-			return new long[] { 0xc4f750L, 0xcc2b3dL, 0x5b3102L, 0x87a466L, 0xa9305bL, 0xb2a8ddL, 0x25e7adL, 0xd2c5e5L, 0x2f2d18L, 0x0e898fL, 0xf92614L, 0x12bb38L, 0xbd6efaL, 0xd4798bL, 0x815cbfL, 0x225809L };
+			return new long[] { 0x35f18bL, 0xe302daL, 0xae1fb3L, 0x5b3102L, 0xeef308L, 0xdf4f58L, 0xe5476fL, 0x1719a5L, 0xe93754L, 0xa91928L, 0x6534e2L, 0xba0b46L, 0xd91f8fL, 0x76195bL, 0xa06d5aL, 0x33c932L, 0x287abeL, 0x60bb23L };
 		}
 	}
 
 	private static long[] constructCodes() {
-		long[] codes = new long[16];
-		System.arraycopy(ConstructCodes0.constructCodes(), 0, codes, 0, 16);
+		long[] codes = new long[18];
+		System.arraycopy(ConstructCodes0.constructCodes(), 0, codes, 0, 18);
 		return codes;
 	}
 
 	public TagCustom24h10()
 	{
-		super(ImageLayout.Factory.createFromString("Custom", "ddddddddwwwwwddwbbbwddwbxbwddwbbbwddwwwwwdddddddd"), 10, constructCodes());
+		super(ImageLayout.Factory.createFromString("Custom", "ddddddddbbbbbddbwwwbddbwxwbddbwwwbddbbbbbdddddddd"), 10, constructCodes());
 	}
 }
 

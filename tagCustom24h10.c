@@ -1,30 +1,32 @@
 #include <stdlib.h>
 #include "tagCustom24h10.h"
 
-static uint64_t codedata[16] = {
-   0x0000000000c4f750UL,
-   0x0000000000cc2b3dUL,
+static uint64_t codedata[18] = {
+   0x000000000035f18bUL,
+   0x0000000000e302daUL,
+   0x0000000000ae1fb3UL,
    0x00000000005b3102UL,
-   0x000000000087a466UL,
-   0x0000000000a9305bUL,
-   0x0000000000b2a8ddUL,
-   0x000000000025e7adUL,
-   0x0000000000d2c5e5UL,
-   0x00000000002f2d18UL,
-   0x00000000000e898fUL,
-   0x0000000000f92614UL,
-   0x000000000012bb38UL,
-   0x0000000000bd6efaUL,
-   0x0000000000d4798bUL,
-   0x0000000000815cbfUL,
-   0x0000000000225809UL,
+   0x0000000000eef308UL,
+   0x0000000000df4f58UL,
+   0x0000000000e5476fUL,
+   0x00000000001719a5UL,
+   0x0000000000e93754UL,
+   0x0000000000a91928UL,
+   0x00000000006534e2UL,
+   0x0000000000ba0b46UL,
+   0x0000000000d91f8fUL,
+   0x000000000076195bUL,
+   0x0000000000a06d5aUL,
+   0x000000000033c932UL,
+   0x0000000000287abeUL,
+   0x000000000060bb23UL,
 };
 apriltag_family_t *tagCustom24h10_create()
 {
    apriltag_family_t *tf = calloc(1, sizeof(apriltag_family_t));
    tf->name = strdup("tagCustom24h10");
    tf->h = 10;
-   tf->ncodes = 16;
+   tf->ncodes = 18;
    tf->codes = codedata;
    tf->nbits = 24;
    tf->bit_x = calloc(24, sizeof(uint32_t));
@@ -79,7 +81,7 @@ apriltag_family_t *tagCustom24h10_create()
    tf->bit_y[23] = -1;
    tf->width_at_border = 3;
    tf->total_width = 7;
-   tf->reversed_border = false;
+   tf->reversed_border = true;
    return tf;
 }
 
